@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
     <h1>HOME</h1>
 
-    <!-- <img class="responsive-img" alt="" src="bird-here"> -->
+    <h3>The Bird House</h3>
+<div class = "wallpaper">
+    <img src="{% static 'main_app/images/Finches.png' %}" alt="Finches image" class="wallpaper">
+</div>
 
 {% endblock %}
+

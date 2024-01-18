@@ -7,9 +7,6 @@ nav, .page-footer  {
     font-family: 'Lucida Sans', 'Lucida Sans Regular';
 }
 
-
-
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -25,6 +22,25 @@ h1, h2, h3 {
 
 .row {
     margin: 0 10px;
+}
+
+.wallpaper img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+    margin: 0 auto;
+}
+.wallpaper {
+    margin-bottom: 20px;
+}
+
+/* wallpaper hover  */
+
+.wallpaper img:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 90%;
+
 }
 
 .card {
@@ -145,6 +161,15 @@ input[type="submit"].btn:hover {
 .card {
     margin-bottom: 20px;
     border: none;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 
