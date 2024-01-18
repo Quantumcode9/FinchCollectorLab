@@ -1,0 +1,150 @@
+nav, .page-footer  {
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular';
+}
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #dbdbdb;
+}
+
+h1, h2, h3 {
+    color: #333;
+    font-size: 30px;
+    text-align: center;
+}
+
+.row {
+    margin: 0 10px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.card-content {
+    margin-top: 15px;
+}
+
+.card-content h2 {
+    color: #444;
+    margin-top: 0;
+}
+
+.card-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.card-action {
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    text-align: right;
+}
+
+.card-action .btn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.card-action .btn:hover {
+    background-color: #0056b3;
+}
+
+.card-panel {
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.teal-text {
+    color: #009688;
+}
+
+.red-text {
+    color: #f44336;
+}
+
+.striped {
+    width: 100%;
+    border-collapse: collapse;
+}
+/* Feeding the Birds */
+.striped th, .striped td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #565656;
+    border-top: 1px solid #535353;
+}
+
+
+.toy {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toy span {
+    width: 100%;
+   
+}
+
+
+
+.form {
+    margin-top: 20px;
+}
+
+input[type="submit"].btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"].btn:hover {
+    background-color: #45a049;
+}
+
+
+.card img {
+    width: 300px;  
+    height: 200px; 
+    object-fit: cover;  
+}
+
+.card {
+    margin-bottom: 20px;
+    border: none;
+}
+
+

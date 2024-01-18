@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1>Finch List</h1>
+
+    {% for finch in finches %}
+        <div class="card">
+    <a href ="{% url 'detail' finch.id %}">
+                {% if finch.photo %}
+        <img src="{{ finch.photo.url }}" alt="{{ finch.name }}">
+                {% else %}
+        <p>No image available</p>
+    {% endif %}
+        <div class="card-content">
+            <span class="card-title">{{ finch.name }}</span>
+            <p>Breed: {{ finch.breed }}</p>
+            <p>Age: {{ finch.age }}</p>
+            <p>Description: {{ finch.description }}</p>
+            <p>Notes: {{ finch.notes }}</p>
+        </div>
+    </a>
+    </div>
+        {% endfor %}
+
+
+{% endblock %}
