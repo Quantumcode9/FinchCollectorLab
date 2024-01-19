@@ -204,13 +204,12 @@ input[type="submit"].btn:hover {
     border-radius: 4px;
     transition: background-color 0.3s ease;
     background-color: #0099c8;
-    
+    transition: ease-in-out 3s;
 }
 
 .primary-btn:hover {
     opacity: 0;
     cursor: not-allowed;
-
 }
 
 .primary-btn:disabled {

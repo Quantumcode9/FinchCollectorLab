@@ -26,6 +26,7 @@ class Finch(models.Model):
     age = models.IntegerField()
     toys = models.ManyToManyField(Toy, blank=True) 
     image = models.ImageField(upload_to='media/images/', blank=True)
+    notes = models.TextField(max_length=250, blank=True)
     def __str__(self):
         return self.name
     
