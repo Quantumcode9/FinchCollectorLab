@@ -33,8 +33,15 @@ class Finch(models.Model):
     def get_absolute_url(self):
         return reverse('detail', kwargs={'finch_id': self.id})
     
-    def fed_for_today(self):
-        return self.feeding_set.filter(date=date.today()).count() >= len(MEALS)
+    # def fed_for_today(self):
+    #     return self.feeding_set.filter(date=date.today()).count() >= len(MEALS)
+    
+    def missing_meals(self):
+        today = date.today()
+        fed_meals = self.feeding_set.filter(date=today).values_list('meal', flat=True)
+        all_meals = [meal[0] for meal in MEALS]
+        missing_meals = [meal for meal in all_meals if meal not in fed_meals]
+        return missing_meals
     
     class Meta:
         ordering = ['-age']

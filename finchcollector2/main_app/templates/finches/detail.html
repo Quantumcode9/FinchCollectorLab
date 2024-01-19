@@ -26,13 +26,13 @@
                 <input type="submit" class="btn" value="Add Feeding">
             </form>
             <hr>
-            {% if finch.fed_for_today %}
+            {% if finch.missing_meals %}
                 <div class="card-panel teal-text center-align">
-                    {{finch.name}} has been fed all meals for today
+                    {{finch.name}} has not been fed {{finch.missing_meals|join:", "}} today
                 </div>
             {% else %}
                 <div class="card-panel red-text center-align">
-                    {{finch.name}} has not been fed all meals for today
+                    {{finch.name}} has been fed all meals for today
                 </div>   
             {% endif %}
             <hr>
