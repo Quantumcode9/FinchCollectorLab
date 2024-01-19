@@ -4,17 +4,20 @@
     <h1> Edit {{object.name}}</h1>
 
 {% else %}
-<h1>Add Finch</h1>
+<h1>Add a Finch</h1>
 {% endif %}
+<div class="container2">
 <form action="" method = "POST">
     {% csrf_token %}
     <table>
         {{form.as_table}}
     </table>
-
+<div class="center-align">
     <input type="submit" value="Submit!" class="btn">
+</div>
 
 </form>
+</div>
 
 {% endblock %}
 
