@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <h1>{{ finch.name }}'s Details</h1>
-    <div class="row">
-        <div class="col s6">
-            <div class="card">
+<h1>{{ finch.name }}'s Details</h1>
+<div class="row">
+    <div class="col s6">
+        <div class="card">
                 <img src="{{ finch.image.url }}" alt="{{ finch.name }}">
                 <div class="card-content">
                 <h2>{{ finch.name }}</h2>
@@ -17,9 +17,9 @@
                     <a href="{% url 'finches_update' finch.id %}" class="btn">Edit</a>
                     <a href="{% url 'finches_delete' finch.id %}" class="btn">Delete</a>
                 </div>
-            </div>
         </div>
-        <div class="col s6">
+    </div>
+    <div class="col s6">
             <form action="{% url 'add_feeding' finch.id %}" method="POST">
                 {% csrf_token %}
                 {{ feeding_form.as_p }}
@@ -33,7 +33,7 @@
             {% else %}
                 <div class="card-panel red-text center-align">
             {% endif %}
-                </div>
+                </div>     
             <hr>
             <table class="striped">
                 <thead>
@@ -49,14 +49,15 @@
                 </tbody>
             </table>
         </div>
-    </div> 
+</div>
     <hr>
-    <div class="row">
-        <div class="col s6">
-            <h3>{{ finch.name }}'s Toys</h3>
+    <h6>Toys</h6>
+<div class="row">
+    <div class="col s6">
+            <h5>{{ finch.name }}'s Toys</h5>
         {% if finch.toys.count %}
         {% for toy in finch.toys.all %}
-            <div class="card">
+        <div class="card">
             <div class="toy">
                 <span>
                 A <span style="color: {{ toy.color }}">{{ toy.color }}</span> {{ toy.name }}
@@ -66,36 +67,35 @@
                 <button type="submit" class="btn">Remove</button>
                 </form>
             </div>
-            </div>
+        </div>
         {% endfor %}
         {% else %}
         <h5>No Toys Yet</h5>
         {% endif %}
-    <hr>
-    <div class="row">
+    </div>
     <div class="col s6">
-        <h3>Available Toys</h3>
+        <h5>Available Toys</h5>
         {% if toys.count %}
         {% for toy in toys.all %}
-            <div class="toy">
-            <div>
-                <span>
-                A <span style="color: {{ toy.color }}">{{ toy.color }}</span> {{ toy.name }}
-                </span>
-            </div>
-            <div class="card-action">
-                <form action="{% url 'assoc_toy' finch.id toy.id %}" method="POST">
+    <div class="card">
+        <div class="toy">
+            <span>
+            A <span style="color: {{ toy.color }}">{{ toy.color }}</span> {{ toy.name }}
+            </span>
+            
+            <form action="{% url 'assoc_toy' finch.id toy.id %}" method="POST">
                 {% csrf_token %}
                 <button type="submit" class="btn">Add</button>
-                </form>
-            </div>
-            </div>
+            </form>
+        </div> 
+    </div>
         {% endfor %}
         {% else %}
         <h5>{{finch.name}} Already Has All Toys Available</h5>
         {% endif %}
     </div>
 </div>
+
 
 
     <script>
