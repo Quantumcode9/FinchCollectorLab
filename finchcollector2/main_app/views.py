@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-# importing our Class-Based-Views (CBVs)
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
@@ -29,9 +28,6 @@ def finches_detail(request, finch_id):
         'toys': toys_finch_doesnt_have,
     })
 
-# CREATE, UPDATE, DELETE VIEWS
-
-# inherit from the CBV - CreateView, then specify the model and fields
 
 class FinchCreate(CreateView):
     model = Finch
@@ -40,23 +36,18 @@ class FinchCreate(CreateView):
 
 
 
-
-
-# Update View - extends the UpdateView class
 class FinchUpdate(UpdateView):
     model = Finch
     
     fields = ['breed', 'description', 'age', 'notes']
 
-# Delete View - extends DeleteView
 class FinchDelete(DeleteView):
     model = Finch
 
     success_url = '/finches'
 
-# FEEDING AND RELATIONSHIP VIEW FUNCTIONS
 def add_feeding(request, finch_id):
-    # create a ModelForm instance using the data in request.POST
+
     form = FeedingForm(request.POST)
 
     if form.is_valid():
@@ -66,18 +57,17 @@ def add_feeding(request, finch_id):
         new_feeding.save()
     return redirect('detail', finch_id=finch_id)
 
-# LIST OF TOY VIEWS HERE
-# ToyList
+
 class ToyList(ListView):
     model = Toy
     template_name = 'toys/index.html'
 
-# ToyDetail
+
 class ToyDetail(DetailView):
     model = Toy
     template_name = 'toys/detail.html'
 
-# ToyCreate
+
 class ToyCreate(CreateView):
     model = Toy
     fields = ['name', 'color']
@@ -85,16 +75,15 @@ class ToyCreate(CreateView):
     def form_valid(self, form):
         return super().form_valid(form)
 
-# ToyUpdate
+
 class ToyUpdate(UpdateView):
     model = Toy
     fields = ['name', 'color']
-    
-# ToyDelete
+
+
 class ToyDelete(DeleteView):
     model = Toy
     success_url = '/toys'
-    
     
     
     
