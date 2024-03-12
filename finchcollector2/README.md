@@ -3,7 +3,6 @@
 ![Alt text](media/images/Screenshot.png)
 
 
-
 ## Features
 
 - **Navigation Bar**: Easily navigate to the different pages of the application including About and All Finches.
